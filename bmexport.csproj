@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5BD58EB2-86F2-4C41-84BD-F802FF824709}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>bmexport</RootNamespace>
+    <AssemblyName>bmexport</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClosedXML, Version=0.95.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.0.95.4\lib\net46\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="ClosedXML.Parser, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1d5f7376574c51ec, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.Parser.2.0.0\lib\netstandard2.0\ClosedXML.Parser.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.18.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.18.0\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml.Framework, Version=3.1.1.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.Framework.3.1.1\lib\net46\DocumentFormat.OpenXml.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelNumberFormat, Version=1.1.0.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelNumberFormat.1.1.0\lib\net20\ExcelNumberFormat.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.HashCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.HashCode.1.1.1\lib\net461\Microsoft.Bcl.HashCode.dll</HintPath>
+    </Reference>
+    <Reference Include="RBush, Version=4.0.0.0, Culture=neutral, PublicKeyToken=c77e27b81f4d0187, processorArchitecture=MSIL">
+      <HintPath>..\packages\RBush.Signed.4.0.0\lib\net47\RBush.dll</HintPath>
+    </Reference>
+    <Reference Include="RevitAPI">
+      <HintPath>..\..\..\..\..\..\Program Files\Autodesk\Revit 2023\RevitAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RevitAPIUI">
+      <HintPath>..\..\..\..\..\..\Program Files\Autodesk\Revit 2023\RevitAPIUI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SixLabors.Fonts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d998eea7b14cab13, processorArchitecture=MSIL">
+      <HintPath>..\packages\SixLabors.Fonts.1.0.0\lib\netstandard2.0\SixLabors.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cabletray\CableTrayFittingExtractor.cs" />
+    <Compile Include="ExportAsExcel.cs" />
+    <Compile Include="DebugAtoIConditionExporter.cs" />
+    <Compile Include="SheetWriter.cs" />
+    <Compile Include="IntegrateFilter.cs" />
+    <Compile Include="IntegrateSettings.cs" />
+    <Compile Include="MBMIntegrateWorkflow.cs" />
+    <Compile Include="FormulaParser.cs" />
+    <Compile Include="SettingComparer.cs" />
+    <Compile Include="DebugLargeDiameterCheck.cs" />
+    <Compile Include="DebugLargeDiameterLogger.cs" />
+    <Compile Include="IntegrateDebugLogger.cs" />
+    <Compile Include="IntegrateExcelExporter.cs" />
+    <Compile Include="FormulaEvaluator.cs" />
+    <Compile Include="SizeBuilder.cs" />
+    <Compile Include="IntegrateRowBuilder.cs" />
+    <Compile Include="MBMIntegrateCommand.cs" />
+    <Compile Include="IntegrateSheetWriter.cs" />
+    <Compile Include="ConnectorFilter.cs" />
+    <Compile Include="SettingCondition.cs" />
+    <Compile Include="SettingConditionReader.cs" />
+    <Compile Include="ConnectorExportReader.cs" />
+    <Compile Include="ConnectorExportRow.cs" />
+    <Compile Include="IntegrateSheetGenerator.cs" />
+    <Compile Include="Common\UnifiedInfoSizeHelper.cs" />
+    <Compile Include="ConnectorSizeCalculator.cs" />
+    <Compile Include="Conduit\ConduitFittingConnectorExtractor.cs" />
+    <Compile Include="Cabletray\CabletrayFittingConnectorExtractor.cs" />
+    <Compile Include="Duct\DuctAccyConnectorExtractor.cs" />
+    <Compile Include="Duct\DuctFittingConnectorExtractor.cs" />
+    <Compile Include="ParameterMappingHelper.cs" />
+    <Compile Include="Pipe\PipeAccyConnectorExtractor.cs" />
+    <Compile Include="Pipe\PipeFittingConnectorExtractor.cs" />
+    <Compile Include="Conduit\ConduitFittingExtractor.cs" />
+    <Compile Include="Duct\DuctFittingAccyExtractor.cs" />
+    <Compile Include="Pipe\PipeFittingAccyExtractor.cs" />
+    <Compile Include="Conduit\ConduitInfoExtractor.cs" />
+    <Compile Include="Cabletray\CabletryinfoExtractor.cs" />
+    <Compile Include="Common\UnifiedInfo.cs" />
+    <Compile Include="Duct\DuctFlexInfoExtractor.cs" />
+    <Compile Include="Pipe\PipeFlexInfoExtractor.cs" />
+    <Compile Include="OLD\DuctAccessoryConnectorLength.cs" />
+    <Compile Include="OLD\PipeAccessoryConnectorLength%28x%29.cs" />
+    <Compile Include="OLD\PipeFittingConnectorLength%28x%29.cs" />
+    <Compile Include="MBMExport.cs" />
+    <Compile Include="Common\ConnectorSizeExtractor.cs" />
+    <Compile Include="Common\ConnectorSizeAggregator.cs" />
+    <Compile Include="BMExcelExport.cs" />
+    <Compile Include="Common\TransitionTypeHelper.cs" />
+    <Compile Include="Common\PartTypeHelper.cs" />
+    <Compile Include="OLD\ConduitFittingConnectorLength.cs" />
+    <Compile Include="OLD\CabletrayFittingConnectorLength%28x%29.cs" />
+    <Compile Include="OLD\DuctFittingConnectorLength%28x%29.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
