@@ -1,0 +1,43 @@
+﻿<Window x:Class="PipeSpacingAlign.SpacingInputWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Pipe Spacing Align"
+        Width="640" Height="170"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- 파이프 간격 입력 (Row 0) -->
+        <Grid Grid.Row="0" Margin="0,0,0,5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="130"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" VerticalAlignment="Center" Text="Pipe Spacing(mm):"/>
+            <TextBox x:Name="SpacingTextBox" Grid.Column="1" Height="25" Text="100" Margin="0,0,250,0"/>
+        </Grid>
+
+        <!-- CSV 파일 선택 (Row 1) -->
+        <Grid Grid.Row="1" Margin="0,5,0,5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="130"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="90"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" VerticalAlignment="Center" Text="Pipe Spacing CSV:"/>
+            <TextBox x:Name="CsvPathTextBox" Grid.Column="1" Height="25" Margin="0,0,5,0" IsReadOnly="True"/>
+            <Button Grid.Column="2" Width="80" Height="25" Content="찾아보기" Click="BrowseCsvButton_Click"/>
+        </Grid>
+
+        <!-- 확인/취소 버튼 (Row 2) -->
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,15,0,0">
+            <Button Width="70" Height="25" Margin="0,0,5,0" Click="OkButton_Click" Content="확인"/>
+            <Button Width="70" Height="25" Click="CancelButton_Click" Content="취소"/>
+        </StackPanel>
+    </Grid>
+</Window>
